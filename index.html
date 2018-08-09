@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BusyBus</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="routeData.js"></script>
+    <script>
+      $(document).ready(function(){
+        var scheduleDetailIconHtml = "<div class='scheduleDetailIcon'><img style='width: 40px' src='images/icon-right-arrow.png'></div>";
+        for (var i in routeData){
+          var $directionHeader = $("<div class='directionHeader'></div>");
+          $directionHeader.text(i);
+          $(".schedulesList").append($directionHeader);
+          for (var j in routeData[i]){
+            var $scheduleItem = $("<div class='scheduleItem'></div>");
+            var busLineHtml = "<div class='busLine'>" + j + "</div>";
+            var lineDirectionHtml = "<div class='scheduleContent'><div class='lineDirection'>To " + routeData[i][j]["destination"] + "</div>";
+            if (i == "Reroute" || i == "Out of Service"){
+              lineDirectionHtml += "<div class='arrivalTimes'>" + routeData[i][j]["frequencyInMins"] + "</div>";
+            } else {
+              lineDirectionHtml += buildArrivalTimesHtml(routeData[i][j]["frequencyInMins"]);
+            }
+            lineDirectionHtml += "</div>";
+            $scheduleItem.html(busLineHtml + lineDirectionHtml + scheduleDetailIconHtml);
+            $(".schedulesList").append($scheduleItem);
+          }
+        }
+
+        function buildArrivalTimesHtml(frequency){
+          var randomCount = Math.floor(Math.random() * 4) + 1;
+          var arrivalHtml = "<div class='arrivalTimes'>";
+          for (var i = 0; i < randomCount; i++){
+            var displayMins = (frequency * (i + 1));
+            arrivalHtml += "<div class='arrival'>" + displayMins + " mins</div>";
+          }
+          arrivalHtml += "</div>";
+          return arrivalHtml;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="navBar">
+        <img src ='images/iOStopBar.png'>
+        <div id='appName'>BB</div>
+          <table id='titleArea'>
+            <tr>
+              <td><img style='width: 12px;' src='images/icon-left-arrow.png'></td>
+              <td>Bus Stop: <span id='busStopName'>Washington & State</span></td>
+              <td><img style='width: 20px;' src='images/icon-hamburger.png'></td>
+            </tr>
+          </table>
+      </div>
+        <div id='mapArea'>
+            <img style='width: 100%;' src='images/map.png'>
+        </div>
+          <div id='scheduleHeader'>
+            <div id='scheduleLabel'>Schedules</div>
+            <div id='busDirections'>
+              <span id='all' style='text-decoration:underline'>All</span> | <span id='eastbound'>Eastbound</span> | <span id='northbound'>Northbound</span><span id='southbound'> Southbound</span>  <span id='westbound'>| Westbound</span>
+            </div>
+          </div>
+        <div class='schedulesList'>
+        </div>
+    </div>
+  </body>
+</html>
