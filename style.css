@@ -44,6 +44,7 @@ body{
   background: #184254;
   color: #ffffff;
   font-size: 1em;
+  font-weight: 300;
 }
 
 #scheduleLabel{
@@ -105,8 +106,8 @@ body{
 }
 
 .busLine{
-  font-size: 2em;
-  line-height: 1.8em;
+  font-size: 1.9em;
+  line-height: 2.2em;
   font-weight: 500;
   text-align: center;
 }

@@ -1,7 +1,7 @@
 var routeData = {
     "Eastbound": {
       "60": {
-        "destination" : "Randolph/Habror Dr",
+        "destination" : "Randolph/Harbor Dr",
         "frequencyInMins" : "20"
       },
       "124": {
