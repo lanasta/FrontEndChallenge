@@ -8,7 +8,7 @@
     <script src="routeData.js"></script>
     <script>
       $(document).ready(function(){
-        var scheduleDetailIconHtml = "<div class='scheduleDetailIcon'><img style='width: 40px' src='images/icon-right-arrow.png'></div>";
+        var scheduleDetailIconHtml = "<div class='scheduleDetailIcon' id='rightArrow'><img src='images/icon-right-arrow.png'></div>";
         for (var i in routeData){
           var $directionHeader = $("<div class='directionHeader'></div>");
           $directionHeader.text(i);
@@ -45,23 +45,22 @@
   <body>
     <div id="container">
       <div id="navBar">
-        <img src ='images/iOStopBar.png'>
-        <div id='appName'>BB</div>
+        <img src ='images/Base.png'>
           <table id='titleArea'>
             <tr>
-              <td><img style='width: 12px;' src='images/icon-left-arrow.png'></td>
+              <td id='leftArrow'><img src='images/icon-left-arrow.png'></td>
               <td>Bus Stop: <span id='busStopName'>Washington & State</span></td>
-              <td><img style='width: 20px;' src='images/icon-hamburger.png'></td>
+              <td id='menuIcon'><img src='images/icon-hamburger.png'></td>
             </tr>
           </table>
       </div>
         <div id='mapArea'>
-            <img style='width: 100%;' src='images/map.png'>
+            <img src='images/map.png'>
         </div>
           <div id='scheduleHeader'>
             <div id='scheduleLabel'>Schedules</div>
             <div id='busDirections'>
-              <span id='all' style='text-decoration:underline'>All</span> | <span id='eastbound'>Eastbound</span> | <span id='northbound'>Northbound</span><span id='southbound'> Southbound</span>  <span id='westbound'>| Westbound</span>
+              <span id='all' class='selectedDirection'>All</span> | <span id='eastbound'>Eastbound</span> | <span id='northbound'>Northbound</span><span id='southbound'> Southbound</span>  <span id='westbound'>| Westbound</span>
             </div>
           </div>
         <div class='schedulesList'>

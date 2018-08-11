@@ -15,7 +15,11 @@ body{
 #navBar{
   color: #ffffff;
   background: #184254;
-  height: 92px;
+  height: 72px;
+}
+
+#navBar img{
+  width: 375px;
 }
 
 #appName{
@@ -29,6 +33,7 @@ body{
   width: 100%;
   text-align: center;
   font-size: 1.08em;
+  margin-top: 4px;
 }
 
 #titleArea img{
@@ -70,7 +75,7 @@ body{
 }
 
 .schedulesList{
-  height:293px;
+  height:313px;
   overflow: auto;
 }
 
@@ -132,7 +137,27 @@ body{
   border-radius: 5px;
 }
 
+#leftArrow img{
+  width: 12px;
+}
+
+#menuIcon img{
+  width: 20px;
+}
+
+#mapArea img{
+  width: 100%;
+}
+
+#rightArrow img{
+  width: 40px;
+}
+
 .scheduleDetailIcon{
   margin-top: 10px;
   width: 12%;
+}
+
+.selectedDirection{
+  text-decoration:underline;
 }
