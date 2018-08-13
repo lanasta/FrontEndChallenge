@@ -8,7 +8,7 @@ body{
 
 #container{
   max-width: 375px;
-  height: 667px;
+  width: 100%;
   background: white;
 }
 
@@ -19,7 +19,8 @@ body{
 }
 
 #navBar img{
-  width: 375px;
+  width: 100%;
+  max-width: 375px;
 }
 
 #appName{
@@ -75,7 +76,7 @@ body{
 }
 
 .schedulesList{
-  height:313px;
+  height: auto;
   overflow: auto;
 }
 
@@ -119,7 +120,7 @@ body{
 
 .lineDirection{
   font-size:1.25em;
-  margin: 5px 0;
+  margin: .7em 0 .3em;
 }
 
 .arrivalTimes{
@@ -160,4 +161,46 @@ body{
 
 .selectedDirection{
   text-decoration:underline;
+}
+
+@media only screen and (max-width: 600px) {
+    #container, #navBar img{
+      max-width: none;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #titleArea{
+      margin:10px 0;
+    }
+
+    #container, #navBar img{
+      max-width: 320px;
+    }
+
+    #busDirections{
+      font-size: .77em;
+      line-height: 1.6em;
+    }
+
+    .busLine{
+      font-size: 1.6em;
+      line-height: 2.5em;
+    }
+
+    .arrivalTimes{
+      font-size: .9em;
+    }
+
+    .arrival{
+      font-size: .7em;
+    }
+
+    .directionHeader{
+      line-height: 1.4em;
+    }
+
+    .lineDirection{
+      font-size: 1.2em;
+    }
 }
