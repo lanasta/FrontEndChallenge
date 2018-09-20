@@ -46,30 +46,20 @@ body{
 }
 
 #scheduleHeader{
-  height: 50px;
+  height: 32px;
   background: #184254;
   color: #ffffff;
   font-size: 1em;
   font-weight: 300;
 }
 
-#scheduleLabel{
-  font-size: 1.2em;
-  line-height: 2.6em;
-  padding-left: 10px;
-  width: 30%;
+#busDirections{
+  width: 100%;
   display: inline-block;
   position: relative;
   float: left;
-}
-
-#busDirections{
-  width: 53%;
-  display: inline-block;
-  position: relative;
-  float: right;
-  text-align: right;
-  font-size: .85em;
+  text-align: center;
+  font-size: .92em;
   line-height: 1.5em;
   padding: 4px 6px 0 0;
   font-weight: 300;
