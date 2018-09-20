@@ -2,6 +2,11 @@
     var scheduleDetailIconHtml = "<div class='scheduleDetailIcon' id='rightArrow'><img src='images/icon-right-arrow.png'></div>";
     for (var i in routeData){
       var $directionHeader = $("<div class='directionHeader'></div>");
+      if (i == "Out of Service"){
+        $directionHeader.addClass("outOfService");
+      } else if (i == "Reroute"){
+        $directionHeader.addClass("reroute");
+      }
       $directionHeader.text(i);
       $(".schedulesList").append($directionHeader);
       for (var j in routeData[i]){
